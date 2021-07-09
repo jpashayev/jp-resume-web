@@ -1,0 +1,248 @@
+/* Background Color Gradient
+	------------------------------------------------------------------------
+/* root CSS variables */
+:root {
+	--gradient: linear-gradient(
+		90deg,
+		#80EE80,
+		#80EE80,
+		#8090F0,
+		#8090F0,
+		#8090F0,
+		#80A0A0,
+		#90105E
+	);	
+}
+
+/* Body Styling 
+	------------------------------------------------------------------------
+  * Hide Scrollbar Keep Functionality 
+  * Navbar brand
+  * Navbar links
+  * Gradient Transition */
+body {
+  background: #020220;
+  background-attachment: fixed;
+  background-image: var(--gradient);
+  background-size: 1000%;
+  background-position: left;
+  transition: background-position 15s;
+  height: 100%;
+  font-family: Tahoma;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body:hover, body:focus {
+  background-position: right;
+}
+
+.navbar-brand{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.nav-link{
+  font-size: 25px;
+}
+
+/* Musical Mapping header styling 
+	------------------------------------------------------------------------
+  * header
+  * sub header
+  * description
+  * divider
+  * image */
+header {
+  margin: 0 auto;
+}
+
+.mm-header {
+  background-color: transparent;
+  padding: 20px;
+  animation: fadeIn ease-in 1200ms;
+}
+
+.header-text{
+  padding: 35px;
+  color: white;
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.sub-header{
+  animation: fadeIn ease-in 1200ms;
+  padding: 15px;
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.mm-desc {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 30px;
+  max-width: 100%;
+  width: 60%;
+  position: relative;
+  animation: fadeIn ease-in 2000ms;
+}
+
+hr {
+  width: 90%; 
+  margin: 15px auto;
+  border-bottom: 8px solid red;
+  box-shadow: 0px 1px 1px 4px red;
+  border-radius: 4px;
+  opacity: 0.9;
+}
+
+img {
+  max-width: 90%;
+  max-height: 200px;
+  width: 300px;
+  min-height: 150px;
+  padding-bottom: 20px;
+}
+
+/* Card and Container 
+	------------------------------------------------------------------------
+  * sections
+  * skill card hover and focus 
+  * container card hover and focus 
+  * container card styling 
+  * scroll on overflow --> container card 
+  * scrollbar flip card back */  
+section{
+  margin: 20px 0 20px;
+}
+
+.skill-card{
+  animation: fadeIn ease-in 2s;
+  padding: 55px;
+  margin: 6px;
+  color: white;
+  text-align: center;
+  border: 2px solid black;
+  box-shadow: 5px 7px 32px 0 rgba(0,0,0,1.0);
+  transition: 0.2s;
+  max-height: auto;  
+  min-width: 200px;
+}
+
+.skill-card:hover, .skill-card:focus {
+  box-shadow: 5px 10px 32px 0 rgba(255,255,255,1.0);
+  border: 2px solid white;
+}
+
+.container-card:hover, .container-card:focus {
+  box-shadow: 5px 10px 32px 0 rgba(255,255,255,1.0);
+  border: 2px solid white;
+}
+
+.container-card{
+  border: 2px solid black;
+  height: 450px;
+  padding: 10px;
+  max-height: 500px;
+  min-height: auto;
+}
+
+.scroll {
+  overflow: scroll;
+}
+
+.container-card::-webkit-scrollbar {
+  display: none;
+}
+
+/* header and desc 
+	------------------------------------------------------------------------
+  * card header
+  * card description */
+.skill-header{
+  padding: 15px;
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+.skill-desc{
+  padding: 8px;
+  color: white;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* video container 
+	------------------------------------------------------------------------
+  * Video container style 
+  * iframe styling */
+.az-frame{
+  display: block;
+  margin: 0 auto;
+  max-width: 80%;
+  max-height: auto;
+  width: 850px;
+  height: 450px;
+}
+
+/* report styling
+	------------------------------------------------------------------------
+  * Report container
+  * Report Text
+  * Report link */
+ 
+.mm-report {
+  background-color: transparent;
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+}
+
+.mm-report-text {
+  color: white;
+  font-size: 42px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 425px;
+}
+
+.report:link {
+	text-decoration: none;
+}
+
+/* keyframes 
+	------------------------------------------------------------------------
+  * Fade effect for text */
+@keyframes fadeIn {
+	0% {opacity:0;}
+	20% {opacity:0.1;}
+	50% {opacity:0.4;}
+	80% {opacity:0.7;}
+	100% {opacity:1;}
+}
+
+/* Media Queries 
+	----------------------------------------------------------------------------------
+  * change website home button size 
+  * nav text font adjustment */
+@media(max-width: 700px){  
+  .block {
+	max-width: 100%;
+  }
+  
+  .navbar-brand{
+  	font-size: 30px;
+  }
+  
+  .nav-link{
+  	font-size: 25px;
+  }
+}

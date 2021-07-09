@@ -1,0 +1,292 @@
+/* Background Color Gradient
+	------------------------------------------------------------------------
+  * Hide Scrollbar Keep Functionality */
+body {
+	width: 100vw;
+	height: 100%;
+	font-family: Tahoma;
+	background-color: black;
+	background-image: linear-gradient(
+		180deg, 
+		#050550,
+		#040440, 
+		#030330, 
+		#020220, 
+		#010110, 
+		#000001, 
+		#000000, 
+		#000010, 
+		#404080); 
+}
+
+body::-webkit-scrollbar, .container-fluid::-webkit-scrollbar {
+  display: none;
+}
+
+/* Flex Containers + navbar & First Page Headers
+	----------------------------------------------------------------------------------
+  * section container 
+  * block style 
+  * ititit specific block 
+  * header 
+  * about me subtitle  
+  * nav brand font adjustment
+  * nav text font adjustment */
+.container-fluid{
+  width: 100vw;
+  height: 100%;
+}
+
+section {
+  width: 80%;
+  min-height: 100%;
+  margin: 0px auto;
+  padding-top: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}  
+
+.row {
+  display: flex;
+  padding: 20px;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.block {
+  width: 50%;
+  height: 350px;
+  margin: 0px auto;
+  padding: 8px;
+}
+
+.big-block {
+  width: 60%;
+}
+
+/* First Page
+	* * * * * * * * * * * * * * * * * * * *
+ */
+.header {
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  padding: 15px;
+}
+
+.header.name{
+  font-size: 60px;
+  animation: fadeIn ease-in 3s;
+}
+
+.subtitle {
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  animation: fadeIn ease-in 3s;
+}
+
+.navbar-brand {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.nav-link{
+  font-size: 25px;;
+}
+
+/* arrow-bounce{ */
+  /* position:fixed; */
+  /* animation:bounce 1s infinite; */
+  /* width: 50px; */
+/* } */
+
+/* Flip Card Outline and Transform
+	----------------------------------------------------------------------------------
+  * flip card Outline 
+  * flip card inner 
+  * flip the inner card 180 degrees when hovered */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  perspective: 150em;
+  justify: space-around;
+  padding: 15px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  text-align: center;
+  transition: transform 1.0s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* flip card front AND back style
+	----------------------------------------------------------------------------------
+  * flip card front style 
+  * flip card Front Side Text
+  * flip card back styling 
+  * scrollbar flip card back */
+.flip-card-front, .flip-card-back {
+  border: 3px solid white;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  padding: 8px;
+  text-align: center;
+  border-radius: 25px;
+}
+
+.flip-card-front {
+  color: black;
+  background-color: #101060;
+  display: flex;
+  align-items: center;
+}
+
+.flip-card-back {
+  padding-top: 30px;
+  padding: 18px;
+  color: white;
+  background-color: #202050;
+  transform: rotateY(180deg);
+  overflow: scroll;
+}
+
+.experience .flip-card-front {
+  background-color: #500101;
+}
+
+.education .flip-card-front {
+  background-color: #104010;
+}
+
+.flip-card-back::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card Styling
+	----------------------------------------------------------------------------------
+  * card back bottom styling
+  * description/skills
+  * label styling */
+.card-top {
+  padding: 5px;
+  margin: 3px;
+  width: 100%;
+}
+.card-bottom {
+  border-top: 3px solid white;
+  padding: 5px;
+  padding-top: 20px;
+  margin: 8px;
+  width: 100%;
+}
+
+.card-front-header {
+  margin: 0px auto;
+  padding: 8px;
+  color: white;
+  font-size: 35px;
+  /* font-weight: bold; */
+}
+
+.card-back-description {
+  font-size: 18px;
+}
+
+.card-back-label {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* footer div styling
+	----------------------------------------------------------------------------------
+  * footer text 
+  * footer hover */
+.footer {
+  border-top: 7px solid green;
+  border-radius: 5px;
+  width: 100%;
+  height: 150px;	
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.foot-text {
+  width: 50%;
+  color: white;
+  padding: 10px;
+  margin: 0px auto;
+  font-size: 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all ease-in-out 250ms;
+}
+
+.foot-text:hover{
+  color: red;
+}
+
+/* Keyframes 
+	----------------------------------------------------------------------------------
+  * fade with opacity 
+  * bouncing arrow */
+@keyframes fadeIn {
+	0% {opacity:0;}
+	15% {opacity:0.15;}
+	30% {opacity:0.30;}
+	50% {opacity:0.5;}
+	100% {opacity:1;}
+}
+
+@keyframes bounce {
+  0%       {bottom:0px;}
+  50%      {bottom:15px;}
+  100%     {bottom:30;}
+}
+
+/* Media Queries 
+	----------------------------------------------------------------------------------
+  * media with max width of 790 px (smartphones/tablets) 
+  * change block size 
+  * change website home button size 
+  * nav text font adjustment */
+@media(max-width: 700px){
+  section {
+	width: 100%;
+  }
+  
+  .block, .block.big-block {
+	width: 100%;
+	height: 300px;
+  }
+  
+  .navbar-brand{
+  	font-size: 30px;
+  }
+  
+  .nav-link{
+  	font-size: 25px;
+  }
+  .header.name{
+    font-size: 35px;
+  }
+}

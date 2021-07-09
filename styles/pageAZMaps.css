@@ -1,0 +1,369 @@
+
+/* Background Color Gradient
+	------------------------------------------------------------------------
+/* root CSS variables */
+:root {
+	--gradient: linear-gradient(
+		90deg,
+		#80EE80,
+		#8090F0,
+		#80A0A0,
+		#90105E
+	);
+}
+
+/* Body Styling 
+	------------------------------------------------------------------------
+  * Hide Scrollbar Keep Functionality 
+  * Gradient Transition */
+  
+html, body {
+  margin: 0;
+  padding: 0;
+}  
+body {
+  background: #013001;
+  background-attachment: fixed;
+  background-image: var(--gradient);
+  background-size: 1000%;
+  background-position: left;
+  transition: background-position 15s;
+  height: 100%;
+  font-family: Tahoma;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body:hover, body:focus {
+  background-position: right;
+}
+
+/* Flex styling Section | Row | Block 
+	------------------------------------------------------------------------
+  * Section container
+  * Row styling [Flex]
+  * Block styling 
+  * Report Block styling 
+  */
+ 
+section{
+  color: white;
+  background-color: #013001;
+  width: 100%;
+  height: 100%;
+  padding: 35px;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.row {
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.block {
+  max-width: 50%;
+  min-width: 100px;
+  height: 500px;
+  padding: 12px;
+  margin: 0px auto;
+}
+
+.report-block {
+  max-width: 35%;
+  min-width: 100px;
+  height: 125px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+/* Arizona Roadmaps Title + Section Headers
+	------------------------------------------------------------------------
+  * Header Texts 
+  * Section Header
+  * subtext 
+  * description
+  * divider
+  * devicons
+  * navbar brand
+  * navbar links  */
+.section-header {
+  color: white;
+  padding: 20px;
+  padding-bottom: 30px;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+  word-wrap: break-word;
+}  
+
+.azMapsTitle {
+  background: transparent;
+  color: white;
+  animation: fade ease-in 1000ms;
+  border-bottom: 10px solid white;
+}
+
+h1 {
+  text-decoration: underline;
+  font-size: 4em;
+  padding: 20px;
+}
+
+.subtext {
+  font-size: 2em;
+}
+
+.azDesc {
+  padding-top: 30px;
+  max-width: 100%;
+  width: 80%;
+  font-size: 1.5em;
+}
+
+hr {
+  width: 100%;
+  border-bottom: 8px solid yellow;
+  box-shadow: 0px 1px 1px 5px yellow;
+  border-radius: 4px;
+  opacity: 0.9;
+}
+
+.icon{
+	width: 175px;
+	height: 175px;
+}
+
+.navbar-brand {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.nav-link{
+  font-size: 25px;
+}
+
+/* Flip Card Outline and Transform
+	----------------------------------------------------------------------------------
+  * flip card Outline 
+  * flip card inner 
+  * flip the inner card 180 degrees when hovered */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  min-width: calc(35vw + 40px);
+  min-height: 500px;
+  perspective: 100em;
+  justify: space-around;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1.0s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* flip card front AND back style
+	----------------------------------------------------------------------------------
+  * flip card front style 
+  * flip card Front Side Text
+  * flip card back styling 
+  * front side flip card image resisizing
+  * scrollbar flip card back */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  padding: 8px;
+  text-align: center;
+  border-radius: 25px;
+}
+
+.flip-card-front {
+  background-color: #104010;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #205020;
+  transform: rotateY(180deg);
+  overflow: scroll;
+  display: flex;
+  align-items: center;
+}
+
+.card-front-header {
+  color: white;
+  padding: 20px;
+  margin: 10px;
+  font-weight: bold;
+  font-size: 2em;
+  border-bottom: 3px solid white;
+}
+
+.card-back {
+  max-height: 100%;
+  width: 80%;
+  color: white;
+  font-size: 1.5em;
+  margin: 0px auto;
+}
+
+.custom-fit {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: cover;
+  padding-bottom: 20px;
+}
+
+/* scrollbar flip card back */
+.flip-card-back::-webkit-scrollbar {
+  display: none;
+}
+
+/* Embedded video iFrame
+	----------------------------------------------------------------------------------
+  * iframe styling
+*/
+.az-frame{
+  max-width: 80%;
+  max-height: auto;
+  width: 850px;
+  height: 450px;
+}
+
+/* Reports and Work Completed Section
+	----------------------------------------------------------------------------------
+  * Report Card
+  * report card hover 
+  * style report text 
+  * remove underlink */
+.report-card {
+  background-color: #102510; 
+  border-radius: 15px;
+  width: 100%;
+  margin: 0 auto;
+  transition: background-color 350ms ease-in-out;
+}
+
+.report-card:hover {
+  background-color: black;
+}
+
+.report-text {
+  color: white;
+  width: 100%;
+  padding: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  font-size: 20px;
+}
+
+.report:link {
+  text-decoration: none;
+  padding: 5px;
+}
+
+/* Footer -- Sponsors and Instructors
+	----------------------------------------------------------------------------------
+  * footer color
+  * hover to transparent background color 
+  * sponsor name and title */
+footer{
+  border-top: 10px solid white;
+  background: black;
+  padding: 20px;
+  bottom: 0px;
+}
+
+.sponsor-card {
+  justify-content: space-around;
+  margin: 15px;
+  width: 30%;
+  height: 150px;
+  border: 5px solid white;
+  border-radius: 10px;
+}
+
+.sponsor-card:hover{
+  background-color: #404040;
+}
+
+.sponsor-name{
+  text-align: center;
+  font-size: 18px;
+  color: white;
+}
+
+.sponsor-title{
+  text-align: center;
+  font-size: 15px;
+  color: white;
+}
+
+/* Keyframes 
+	----------------------------------------------------------------------------------
+  * fade with opacity 
+  * bouncing arrow */
+@keyframes fade {
+	0% {opacity:0;}
+	50% {opacity:0.5;}
+	90% {opacity:0.9;}
+	100% {opacity:1;}
+}
+
+@keyframes subFade {
+	0% {opacity:0;}
+	0% {opacity:0.0;}
+	0% {opacity:0.0;}
+	20% {opacity:0.2;}
+	55% {opacity:0.55;}
+	100% {opacity:1;}
+}
+
+/* Media Query
+ 	----------------------------------------------------------------------------------
+  * changes blocks for smart devices
+  * adjust navbar text size
+*/
+@media(max-width: 700px){
+  .report-block {
+	max-width: 80%;
+  }
+  
+  .sponsor-card {
+	width: 100%;
+  }
+  
+  .block {
+	max-width: 100%;
+  }
+  
+  .navbar-brand{
+  	font-size: 30px;
+  }
+  
+  .nav-link{
+  	font-size: 25px;
+  }
+}
